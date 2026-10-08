@@ -21,14 +21,15 @@ export const viewport: Viewport = {
 };
 
 export function generateMetadata(): Metadata {
+  const siteUrl = USER.website;
   return {
     title: { template: `%s | ${USER.name}`, default: `${USER.name}` },
-    metadataBase: new URL(`https://${USER.domain}`),
+    metadataBase: new URL(siteUrl),
     openGraph: {
       title: USER.name,
       siteName: USER.name,
       type: 'website',
-      url: `https://${USER.domain}`,
+      url: siteUrl,
       images: [
         {
           url: createOgImage({ title: USER.name, meta: USER.tagline }),
@@ -74,7 +75,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={cn(fontX.variable, fontMono.variable, 'scroll-smooth')}
       suppressHydrationWarning
     >

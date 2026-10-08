@@ -7,7 +7,7 @@ export type User = {
   email: string;
   location: string;
   domain: string;
-  website?: string;
+  website: string;
   description: string;
   jobTitle: string;
   twitterHandle: string;
@@ -20,46 +20,42 @@ export type User = {
     linkedin: string;
     bluesky: string;
   };
-  image: {
-    profile: string;
-  };
+  image: { profile: string };
   flipSentences: string[];
   experiences?: Experience[];
 };
 
+const domain = process.env.NEXT_PUBLIC_SITE_DOMAIN || 'localhost:6969';
+const website = `${domain.startsWith('localhost') ? 'http' : 'https'}://${domain}`;
+
 const USER: User = {
-  firstName: 'Ruixen',
-  lastName: '',
-  name: 'Ruixen',
-  email: 'support@ruixen.com',
-  domain: 'portfolio-ruixens-projects.vercel.app',
-  jobTitle: 'UI Engineering Studio',
-  username: 'SriSomanaath',
-  tagline: 'Ruixen — Crafting tools people actually want to use',
-  twitterHandle: '@ruixen_ui',
-  location: 'Vancouver, Canada',
+  firstName: 'Dion',
+  lastName: 'Erik',
+  name: 'Dion Erik',
+  email: '',
+  domain,
+  website,
+  jobTitle: 'Desenvolvimento Web · Tecnologia · TI · Automação',
+  username: 'DevDionErik',
+  tagline: 'Dion Erik — Desenvolvimento web e automação',
+  twitterHandle: '',
+  location: 'Brasil',
   description:
-    'Notes on building thoughtful products, navigating frontend architecture, and figuring out what good software really looks like.',
+    'Estudante do Ensino Médio construindo carreira em tecnologia, com foco em desenvolvimento web, programação e automação.',
   namePronunciationUrl: '',
   social: {
-    twitter: 'https://x.com/ruixen_ui',
-    github: 'https://github.com/SriSomanaath',
-    linkedin: '',
+    twitter: '',
+    github: 'https://github.com/DevDionErik',
+    linkedin: 'https://www.linkedin.com/in/dion-erik/',
     bluesky: '',
   },
   flipSentences: [
-    'Crafting tools people actually want to use.',
-    'Frontend architecture & design systems.',
-    'Developer tooling, done thoughtfully.',
-    'Building with intention.',
-    'A UI engineering studio.',
+    'Desenvolvimento web e soluções digitais.',
+    'Tecnologia, programação e automação.',
+    'Aprendendo e construindo projetos próprios.',
   ],
-  image: {
-    profile: 'https://github.com/SriSomanaath.png',
-  },
-  experiences: experiences,
+  image: { profile: 'https://github.com/DevDionErik.png' },
+  experiences,
 };
-
-USER.website = `https://${USER.domain}`;
 
 export { USER };

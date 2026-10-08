@@ -1,89 +1,62 @@
 export type Project = {
-  /** Stable unique identifier (used as list key/anchor). */
   id: string;
   title: string;
-  /**
-   * Project period for display and sorting.
-   * Use "MM.YYYY" format. Omit `end` for ongoing projects.
-   */
-  period: {
-    /** Start date (e.g., "05.2025"). */
-    start: string;
-    /** End date; leave undefined for "Present". */
-    end?: string;
-  };
-  /** Public URL (site, repository, demo, or video). */
-  link: string;
-  /** Github repository URL. */
+  period: { start: string; end?: string };
+  link?: string;
   github?: string;
-  /** Tags/technologies for chips or filtering. */
   skills: string[];
-  /** Short one-line description for list view. */
   shortDescription?: string;
-  /** Optional rich description; Markdown and line breaks supported. */
   description?: string;
-  /** Logo image URL (absolute or path under /public). */
   logo?: string;
-  /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: 'palettebox',
-    title: 'PaletteBox',
-    period: {
-      start: '03.2025',
-    },
-    link: 'https://palettebox.design/',
-    logo: '/project_images/ruixen_ui_logo.jpeg',
-    skills: [
-      'Next.js',
-      'TypeScript',
-      'React',
-      'Tailwind CSS',
-      'Figma API',
-    ],
+    id: 'orvion-orders',
+    title: 'Orvion Orders',
+    period: { start: 'Em desenvolvimento' },
+    skills: ['Desenvolvimento web', 'Gestão de pedidos', 'QR Code'],
     shortDescription:
-      'A design token manager that syncs Figma variables to code in real time.',
-    description: `A bridge between design and engineering workflows.
-
-Features include:
-- Two-way sync between Figma variables and CSS/Tailwind tokens
-- Visual diff viewer for design changes
-- CLI for CI/CD integration
-- Team collaboration with role-based access`,
+      'Sistema web para restaurantes com cardápio por QR Code, pedidos, mesas e níveis de acesso para equipes e administradores.',
     isExpanded: true,
   },
   {
-    id: 'hookshelf',
-    title: 'HookShelf',
-    period: {
-      start: '09.2024',
-    },
-    link: 'https://hookshelf.dev/',
-    logo: '/project_images/shadcnagents.png',
-    skills: ['React', 'TypeScript', 'Storybook', 'Vitest', 'npm'],
+    id: 'convite-batizado-digital',
+    title: 'Convite de Batizado Digital',
+    period: { start: 'Projetos próprios' },
+    link: 'https://github.com/DevDionErik/Convite-Batizado-Digital',
+    github: 'https://github.com/DevDionErik/Convite-Batizado-Digital',
+    skills: ['Desenvolvimento web', 'Convite digital'],
     shortDescription:
-      'A curated collection of production-ready React hooks with interactive docs.',
+      'Projeto de convite digital para batizado, desenvolvido como uma experiência web.',
   },
   {
-    id: 'tablewise',
-    title: 'Tablewise',
-    period: {
-      start: '01.2024',
-      end: '08.2024',
-    },
-    link: 'https://tablewise.app/',
-    logo: '/project_images/source_of_truth.png',
-    skills: [
-      'Next.js',
-      'PostgreSQL',
-      'Prisma',
-      'tRPC',
-      'Stripe',
-    ],
+    id: 'pizzaria-quintal-site',
+    title: 'Pizzaria Quintal',
+    period: { start: 'Projetos próprios' },
+    link: 'https://github.com/DevDionErik/pizzaria-quintal-site',
+    github: 'https://github.com/DevDionErik/pizzaria-quintal-site',
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'WhatsApp'],
     shortDescription:
-      'A lightweight database explorer and query builder for non-technical teams.',
+      'Site para pizzaria com apresentação do negócio e acesso fácil aos canais de contato.',
+  },
+  {
+    id: 'aurora-confeitaria',
+    title: 'Aurora Confeitaria',
+    period: { start: 'Projetos próprios' },
+    link: 'https://github.com/ghostSIX00/aurora-confeitaria',
+    github: 'https://github.com/ghostSIX00/aurora-confeitaria',
+    skills: ['Desenvolvimento web', 'Pequenos negócios'],
+    shortDescription:
+      'Site para uma confeitaria, pensado para apresentar produtos e fortalecer sua presença digital.',
+  },
+  {
+    id: 'automacoes',
+    title: 'Estudos de automação',
+    period: { start: 'Em andamento' },
+    skills: ['n8n', 'IA', 'Integração de sistemas'],
+    shortDescription:
+      'Exploração de automações de processos e integrações entre ferramentas e sistemas.',
   },
 ];
